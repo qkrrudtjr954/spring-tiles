@@ -31,7 +31,7 @@ public class KhMemberController {
 		logger.info("KhMemberController regi");		
 		return "regi.tiles";
 	}
-	/*
+	
 	@RequestMapping(value="regiAf.do", 
 			method= {RequestMethod.GET, RequestMethod.POST})
 	public String regiAf(MemberDto mem, Model model)throws Exception{
@@ -39,7 +39,7 @@ public class KhMemberController {
 		
 		khMemberService.addmember(mem);
 		
-		return "login";		
+		return "login.tiles";		
 	}	
 	
 	@RequestMapping(value="loginAf.do", 
@@ -56,7 +56,7 @@ public class KhMemberController {
 		}else {
 			return "redirect:/login.do";
 		}		
-	}*/
+	}
 	
 	
 }

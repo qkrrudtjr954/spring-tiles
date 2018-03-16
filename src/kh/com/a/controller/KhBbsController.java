@@ -30,7 +30,7 @@ public class KhBbsController {
 		List<BbsDto> list = khBbsService.getBbsList();
 		model.addAttribute("bbslist", list);
 		
-		return "bbslist";
+		return "bbslist.tiles";
 	}
 	
 	@RequestMapping(value = "bbswrite.do", method = {RequestMethod.GET,	RequestMethod.POST})

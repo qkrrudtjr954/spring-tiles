@@ -16,4 +16,8 @@
 	<put-attribute name="content" value="/WEB-INF/views/login/regi.jsp"/>
 </definition>	
 
+<definition name="bbslist.tiles" extends="login.tiles"> 
+	<put-attribute name="content" value="/WEB-INF/views/bbs/bbslist.jsp"/>
+</definition>	
+
 </tiles-definitions>
