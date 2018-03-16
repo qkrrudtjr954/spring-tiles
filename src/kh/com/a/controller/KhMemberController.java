@@ -23,9 +23,9 @@ public class KhMemberController {
 	@RequestMapping(value="login.do", method=RequestMethod.GET)
 	public String login(Model model) {
 		logger.info("KhMemberController login");
-		return "login";
+		return "login.tiles";
 	}
-	
+	/*
 	@RequestMapping(value="regi.do", method=RequestMethod.GET)
 	public String regi(Model model) {
 		logger.info("KhMemberController regi");		
@@ -56,7 +56,7 @@ public class KhMemberController {
 		}else {
 			return "redirect:/login.do";
 		}		
-	}
+	}*/
 	
 	
 }

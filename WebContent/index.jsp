@@ -10,7 +10,7 @@
 <!-- 
 <a href="./hello">Hello 링크</a>
  -->
- 
+ <%=response.sendRedirect("login.do") %>
 <a href="login.do">Hello Spring</a> 
  
 </body>
