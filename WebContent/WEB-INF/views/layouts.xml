@@ -16,4 +16,21 @@
 	<put-attribute name="content" value="/WEB-INF/views/login/regi.jsp"/>
 </definition>	
 
+<definition name="bbslist.tiles" extends="login.tiles"> 
+	<put-attribute name="content" value="/WEB-INF/views/bbs/bbslist.jsp"/>
+</definition>	
+<definition name="bbswrite.tiles" extends="login.tiles"> 
+	<put-attribute name="content" value="/WEB-INF/views/bbs/bbswrite.jsp"/>
+</definition>	
+<definition name="bbsdetail.tiles" extends="login.tiles"> 
+	<put-attribute name="content" value="/WEB-INF/views/bbs/bbsdetail.jsp"/>
+</definition>	
+<definition name="bbsupdate.tiles" extends="login.tiles"> 
+	<put-attribute name="content" value="/WEB-INF/views/bbs/bbsupdate.jsp"/>
+</definition>	
+<definition name="answer.tiles" extends="login.tiles"> 
+	<put-attribute name="content" value="/WEB-INF/views/bbs/answer.jsp"/>
+</definition>	
+
+
 </tiles-definitions>

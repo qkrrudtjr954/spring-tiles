@@ -1,6 +1,7 @@
 package kh.com.a.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,19 +32,17 @@ public class KhMemberController {
 		logger.info("KhMemberController regi");		
 		return "regi.tiles";
 	}
-	/*
-	@RequestMapping(value="regiAf.do", 
-			method= {RequestMethod.GET, RequestMethod.POST})
+	
+	@RequestMapping(value="regiAf.do", method= {RequestMethod.GET, RequestMethod.POST})
 	public String regiAf(MemberDto mem, Model model)throws Exception{
 		logger.info("KhMemberController regiAf");	
 		
 		khMemberService.addmember(mem);
 		
-		return "login";		
+		return "login.tiles";		
 	}	
 	
-	@RequestMapping(value="loginAf.do", 
-			method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="loginAf.do", method= {RequestMethod.GET, RequestMethod.POST})
 	public String loginAf(HttpServletRequest req, MemberDto mem, Model model)throws Exception{
 		logger.info("KhMemberController loginAf");
 		
@@ -56,7 +55,17 @@ public class KhMemberController {
 		}else {
 			return "redirect:/login.do";
 		}		
-	}*/
+	}
+	
+	@RequestMapping(value="logout.do", method= {RequestMethod.GET, RequestMethod.POST})
+	public String logout(HttpServletRequest req, Model model)throws Exception{
+		logger.info("KhMemberController logout");
+		
+		HttpSession session = req.getSession();
+		session.invalidate();
+		
+		return "redirect:login.do";
+	}
 	
 	
 }

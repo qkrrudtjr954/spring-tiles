@@ -118,7 +118,7 @@ MemberDto mem = (MemberDto)ologin;
 </form>
 </div>
 
-<a href='bbslist.jsp'>글 목록</a>
+<a href="bbslist.do">글 목록</a>
 
 </body>
 </html>

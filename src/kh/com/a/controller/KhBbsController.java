@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kh.com.a.model.BbsDto;
 import kh.com.a.service.KhBbsService;
@@ -22,43 +23,39 @@ public class KhBbsController {
 	@Autowired
 	KhBbsService khBbsService;
 	
-	@RequestMapping(value="bbslist.do", 
-			method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="bbslist.do", method= {RequestMethod.GET, RequestMethod.POST})
 	public String bbslist(Model model) throws Exception{
 		logger.info("KhBbsController bbslist");		
 		
 		List<BbsDto> list = khBbsService.getBbsList();
 		model.addAttribute("bbslist", list);
 		
-		return "bbslist";
+		return "bbslist.tiles";
 	}
 	
 	@RequestMapping(value = "bbswrite.do", method = {RequestMethod.GET,	RequestMethod.POST})
 	public String bbswrite(Model model) {
 		logger.info("KhBbsController bbswrite "+ new Date());
-		return "bbswrite";
+		return "bbswrite.tiles";
 	}
 	
-	@RequestMapping(value = "bbswriteAf.do", 
-			method = RequestMethod.POST)
+	@RequestMapping(value = "bbswriteAf.do", method = RequestMethod.POST)
 	public String bbswriteAf(BbsDto bbs, Model model) throws Exception {
 		if(bbs.getContent().equals("") || bbs.getTitle().equals("")){
-			return "bbswrite";
+			return "bbswrite.tiles";
 		}
 		logger.info("Welcome KhBbsController bbswriteAf! "+ new Date());
 		khBbsService.writeBbs(bbs);
 		return "redirect:/bbslist.do";
 	}
 	
-	@RequestMapping(value = "bbsdetail.do", 
-			method = {RequestMethod.GET,
-			RequestMethod.POST})
+	@RequestMapping(value = "bbsdetail.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String bbsdetail(int seq,Model model) throws Exception {
 		logger.info("Welcome KhBbsController bbsdetail! "+ new Date());
 		BbsDto bbs=null;		
 		bbs=khBbsService.getBbs(seq);
 		model.addAttribute("bbs", bbs);
-		return "bbsdetail";
+		return "bbsdetail.tiles";
 	}
 
 	@RequestMapping(value = "answer.do", method = {RequestMethod.GET, RequestMethod.POST})
@@ -67,7 +64,7 @@ public class KhBbsController {
 		BbsDto bbs=null;		
 		bbs=khBbsService.getBbs(seq);
 		model.addAttribute("bbs", bbs);
-		return "answer";
+		return "answer.tiles";
 	}
 	
 	@RequestMapping(value = "answerAf.do", method = {RequestMethod.GET, RequestMethod.POST})
@@ -90,7 +87,16 @@ public class KhBbsController {
 		
 		BbsDto bbs=khBbsService.getBbs(seq);		
 		model.addAttribute("bbs", bbs);		
-		return "bbsupdate";
+		return "bbsupdate.tiles";
+	}
+
+	@RequestMapping(value = "bbsupdateAf.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public String bbsupdateAf(BbsDto bbsDto, Model model, RedirectAttributes redirectAttributes) throws Exception{
+		logger.info("Welcome KhBbsController bbsupdate! "+ new Date());
+		
+		BbsDto bbs = khBbsService.updateBbs(bbsDto);		
+		redirectAttributes.addAttribute("seq", bbs.getSeq());
+		return "redirect:bbsdetail.do";
 	}
 	 
 }

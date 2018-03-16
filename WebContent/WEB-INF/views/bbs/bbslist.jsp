@@ -64,12 +64,7 @@ public String arrow(int depth){
 
 %>
 
-
-<%-- <h3>환영합니다 <%=mem.getName() %>님 반갑습니다</h3> --%>
-<h3>환영합니다 ${login.name }님 반갑습니다</h3>
-
-<a href="logout.jsp">로그아웃</a>
-<hr>
+<h1>게시판</h1>
 
 <%
 List<BbsDto> bbslist = (List<BbsDto>)request.getAttribute("bbslist");

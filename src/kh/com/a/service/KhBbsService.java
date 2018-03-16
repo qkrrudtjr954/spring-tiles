@@ -15,4 +15,6 @@ public interface KhBbsService {
 	BbsDto getBbs(int seq) throws Exception;
 	void deleteBbs(int seq) throws Exception;
 
+	public BbsDto updateBbs(BbsDto bbsDto) throws Exception;
+
 }

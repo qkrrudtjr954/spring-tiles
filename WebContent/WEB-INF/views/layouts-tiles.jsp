@@ -9,25 +9,27 @@
 </head>
 <body>
 
-<table border="1" width="100%" heigth="100%" bordercolor="Gray">
-	<tr align="center">
-		<td height="10%" colspan="2">
-			<tiles:insertAttribute name="header"/>
-		</td>
-	</tr>
-	<tr>
-		<td width="30%" align="left" valign="top">
-			<tiles:insertAttribute name="menu"/>
-		</td>
-		<td>
-			<tiles:insertAttribute name="content"/>
-		</td>
-	</tr>
-	<tr align="center">
-		<td height="10%" colspan="2">
-			<tiles:insertAttribute name="footer"/>
-		</td>
-	</tr>
+<table border="1" width="100%" height="100%" bordercolor="Gray">
+<tr align="center">
+	<td height="10%" colspan="2">
+		<tiles:insertAttribute name="header"/>
+	</td>
+</tr>
+<tr>
+	<td width="30%" align="left" valign="top">
+		<tiles:insertAttribute name="menu"/>
+	</td> 
+	<td>
+		<tiles:insertAttribute name="content"/>
+	</td>
+</tr>
+
+<tr align="center">
+	<td height="10%" colspan="2">
+		<tiles:insertAttribute name="footer"/>
+	</td>
+</tr>
+
 </table>
 
 </body>

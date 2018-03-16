@@ -42,6 +42,11 @@ public class KhBbsServiceImpl implements KhBbsService {
 	@Override
 	public void deleteBbs(int seq) throws Exception {
 		khBbsDao.deleteBbs(seq);		
+	}
+
+	@Override
+	public BbsDto updateBbs(BbsDto bbsDto) throws Exception {
+		return khBbsDao.getBbs(bbsDto.getSeq());		 
 	}	
 	
 	

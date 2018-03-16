@@ -58,5 +58,10 @@ public class KhBbsDaoImpl implements KhBbsDao {
 		sqlSession.update(ns+"deleteBbs", seq);
 	}
 
+	@Override
+	public boolean updateBbs(BbsDto bbsDto) {
+		return sqlSession.update(ns+"updateBbs", bbsDto) > 0 ? true : false;
+	}
+
 	
 }

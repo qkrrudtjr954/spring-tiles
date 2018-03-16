@@ -16,4 +16,6 @@ public interface KhBbsDao {
 	public BbsDto getBbs(int seq) throws Exception;
 	
 	public void deleteBbs(int seq) throws Exception;
+
+	boolean updateBbs(BbsDto bbsDto);
 }
