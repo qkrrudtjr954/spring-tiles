@@ -25,13 +25,13 @@ public class KhMemberController {
 		logger.info("KhMemberController login");
 		return "login.tiles";
 	}
-	/*
+	
 	@RequestMapping(value="regi.do", method=RequestMethod.GET)
 	public String regi(Model model) {
 		logger.info("KhMemberController regi");		
-		return "regi";
+		return "regi.tiles";
 	}
-	
+	/*
 	@RequestMapping(value="regiAf.do", 
 			method= {RequestMethod.GET, RequestMethod.POST})
 	public String regiAf(MemberDto mem, Model model)throws Exception{

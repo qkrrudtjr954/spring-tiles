@@ -12,4 +12,8 @@
 	<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 </definition>	
 
+<definition name="regi.tiles" extends="login.tiles"> 
+	<put-attribute name="content" value="/WEB-INF/views/login/regi.jsp"/>
+</definition>	
+
 </tiles-definitions>
